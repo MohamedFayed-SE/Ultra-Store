@@ -1,0 +1,140 @@
+
+<section class="container  border shadow-lg p-4 mt-5 " *ngIf='isEmpty()'>
+
+   
+    <div class="py-4 empty-card">
+        <figure class=" col-md-12 pt-5 ">
+            <img src="https://www.vinsolutions.com/wp-content/uploads/sites/2/vinsolutions/media/Vin-Images/news-blog/Empty_Shopping_Cart_blog.jpg" alt="" class="w-100 m-auto">
+            <figcaption class="d-flex justify-content-center my-3">
+                <button mat-raised-button class="bg-warning w-50 py-2" (click)='shopNow()'>Shop Now</button>
+            </figcaption>
+        </figure>
+    </div>
+     
+       
+  
+</section>
+
+
+
+
+<section class="container py-4 " *ngIf="!isEmpty()">
+<div class="col-md-12 mt-5 bg-warning py-3 shadow-lg mb-2">
+    <div class="row justify-content-lg-between">
+        <div class="col-md-7">
+           <strong>ITEMS</strong>
+        </div>
+        <div class="col-md-3">
+           <strong>QUANTITY</strong>
+            
+        </div>
+        <div class="col-md-2">
+            <strong class="">Total Price</strong>
+        </div>
+    </div>
+
+</div>
+    <div class="row">
+        <article class="col-md-12 border shadow-lg mb-3 pb-3 pp " *ngFor='let cart of carts;let i = index'>
+            <div class="row cart-item">
+
+                <div class="row my-2">
+                    <figure class="col-md-2 d-flex justify-content-center align-items-center">
+                        <img src="{{cart.image}}" alt="" class="w-50">
+                    </figure>
+                    <main class="col-md-4 d-flex justify-content-center align-items-center">
+                        <article class="my-2 py-2">
+                            <h4 class="cart-font-style">{{cart.title}}</h4>
+                            <p class="text-muted">{{cart.description}}</p>
+                            <div class="">
+                               <button class="btn btn-secondary" (click)='removeItem(i)'><span class="px-2"><i class="far fa-trash-alt fa-lg"></i></span> Remove Item</button>
+                                
+                            </div>
+                        </article>
+                           
+                       
+                        
+                        
+                    </main>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center">
+                        <div class=" d-flex justify-content-between">
+                          
+                           <button class="btn btn-info mx-1" (click)='decrease(cart)'><i class="fas fa-minus"></i></button>
+                           <div class="quantity mx-1 bg-white shadow-lg border d-flex justify-content-center align-items-center">
+                                <span>{{cart.quantity}}</span>
+                              </div>
+                           <button class="btn btn-info" (click)="increase(cart)"><i class="fas fa-plus"></i></button>
+                          </div>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center align-items-center m-auto py-3">
+                        <div class="cart-font-style">
+                            {{cart.totalPrice|currency}}  
+                            <span class="px-2">EGP</span>
+                        </div>
+                        
+                    </div>
+
+                </div>
+              
+
+
+            </div>
+            
+        </article>
+    
+    </div>
+   
+    <div class="d-flex justify-content-end col-md-12">
+        <div class="">
+            <button type="button" class="btn btn-outline-danger m-auto text-dark px-5 " data-toggle="modal" data-target="#exampleModal" (click)="buy()">
+                Buy
+              </button>
+        </div>
+        
+    </div>
+
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-info cart-font-style" id="exampleModalLabel">Contact Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="" [formGroup]='orderForm' (ngSubmit)='order()'>
+                <div action="" class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name" required formControlName='name'>
+                </div>
+                <div action="" class="form-group">
+                    <input type="text" class="form-control" placeholder="Your city" required formControlName='city'>
+                </div>
+                <div action="" class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Address" required formControlName='address'>
+                </div>
+                <div action="" class="form-group">
+                    <input type="text" class="form-control" placeholder="Phone Number" required formControlName='phone'>
+                </div>
+                <div class="my-2">
+                  <button class="btn btn-danger  ml-2" type="button"> Order Cost</button> 
+                  <strong>
+                    {{totalPrices|currency}} EGP
+                  </strong>
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" >ORDER</button>
+                  </div>
+            </form>
+           
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>

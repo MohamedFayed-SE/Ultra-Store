@@ -1,0 +1,91 @@
+
+<section class="container border shadow-lg  rounded my-5">
+ <header class="my-5 mx-3">
+     <span class="header-from">Regestration Form</span>
+ </header>
+ <div class="alert alert-danger" *ngIf='errorMessage()'>
+    {{error}}
+ </div>
+    <form [formGroup]='regestrationForm' (ngSubmit)='regestrationSubmit()'>
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" class="form-control" placeholder="First Name" formControlName="first_name">
+
+            <div class="" *ngIf='checkValidationInput("first_name")'>
+                <div class="alert alert-danger my-2" role="alert" *ngIf='checkRequiredValidation("first_name")'>
+                    this is Required
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkMinLengthValidation("first_name")'>
+                    this minimumlength is 3
+    
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkMaxLengthValidation("first_name")'>
+                    this maximumlength is 9
+    
+                  </div>
+            </div>
+            
+
+        </div>
+         <div class="form-group">
+            <label for="">last Name</label>
+            <input type="text" class="form-control" placeholder="last Name" formControlName="last_name">
+            <div class="alerts" *ngIf="checkValidationInput('last_name')">
+                <div class="alert alert-danger my-2" role="alert" *ngIf='checkRequiredValidation("last_name")'>
+                    this is Required
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkMinLengthValidation("last_name")'>
+                    this minimumlength is 3
+    
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkMaxLengthValidation("last_name")'>
+                    this maximumlength is 9
+    
+                  </div>
+    
+            </div>
+          
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            <div class="" *ngIf="checkValidationInput('email')">
+                <div class="alert alert-danger my-2" role="alert" *ngIf='checkRequiredValidation("email")'>
+                    this is Required
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkEmailValidation()'>
+                   Invalid Email
+    
+                  </div>
+            </div>
+           
+
+        </div>
+        <div class="form-group">
+            <label for="">password</label>
+            <input type="password" class="form-control" placeholder="password" formControlName="password">
+            <div class="" *ngIf="checkValidationInput('password')">
+            
+                <div class="alert alert-danger my-2" role="alert" *ngIf='checkRequiredValidation("password")'>
+                    this is Required
+                  </div>
+                  <div class="alert alert-danger my-2" role="alert" *ngIf='checkPasswordValidation()'>
+                     <ul>
+                      <li>
+                          Your password Must Start with captial character
+                      </li>  
+                      <li>
+                          Your password length should at least 7 character
+                      </li>
+                     </ul>
+    
+                  </div>
+            </div>
+           
+
+        </div>
+        <button class="btn btn-info my-3 px-3" type="submit" [disabled]='!CheckRegestrationInfo()'>Submit</button>
+    </form>
+
+</section>
+

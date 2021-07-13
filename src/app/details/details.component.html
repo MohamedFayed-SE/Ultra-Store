@@ -1,0 +1,188 @@
+
+<ngx-spinner [name]="spinnerName" [type]="spinnerType">
+
+</ngx-spinner>
+<section class="py-5 container col-md-11 my-2">
+    
+    
+    <div class="row ">
+        <!--------------- Cart Detals--------------->
+        <mat-card class="bg-white shadow-lg col-md-8">
+            <main class="row details">
+                 <span><i class="far fa-heart fa-2x cart-icon"></i></span>
+                <figure class="col-md-4 border shadow-lg rounded ">
+                    <img src="{{cartDetails?.image}}" alt="" class="w-100 img">
+                </figure>
+               
+                <div class="col-md-8">
+                    <figcaption class="py-3">
+                        <span class="bg-danger p-1 rounded font-weight-bolder">Official Store</span>
+                       
+                     <h2 class="my-2">
+                         {{cartDetails?.title}}
+                     </h2>
+                         {{cartDetails?.description}}
+                         <div class="line my-3"></div>
+                         <div>
+                             <strong class="price-font">
+                                 {{cartDetails?.price|currency}} EGP
+                             </strong>
+                             <div class="py-2 text-muted">
+                                 + shipping from EGP 11 to Cairo
+                             </div>
+                             
+                         </div>
+                         <div class="line mb-5">
+            
+                         </div>
+                         <div>
+                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolorem odit et commodi vero. Nostrum, reprehenderit deleniti nisi repudiandae possimus voluptatum assumenda natus, eos ipsa soluta quaerat? Dicta, obcaecati? Mollitia est, accusantium, aperiam excepturi explicabo pariatur facilis quae laboriosam labore dolore assumenda </p>
+                         </div>
+                        
+                    </figcaption>  
+                    <mat-card-actions (click)='addCart(cartDetails)' class="">
+                        <button type="button" mat-raised-button class="bg-warning w-100 py-2  mt-4 text-white price-font position-relative">   
+                            <span class="text-center"> ADD TO cART</span> 
+                             
+                       </button>
+                       <div class="icon-button">
+                        <i class="fas fa-cart-plus fa-2x text-white"></i>
+                    </div>
+                    
+                  
+                      
+                      
+                     
+                   </mat-card-actions>
+                   
+                  
+                </div>
+                
+        
+                
+        
+             </main>
+            
+           </mat-card> 
+            <!--------------- Side Nave Of DEtails-------------->
+           <mat-sidenav-container class="col-md-3 ml-5 my-3 bg-white border shadow-lg details">
+            <mat-sidenav>Start</mat-sidenav>
+            <mat-sidenav position="end">End</mat-sidenav>
+            <mat-sidenav-content class="my-2">
+                <span class="price-font text-muted">DELIVERY & RETURNS</span>
+                <div class="line mb-2"></div>
+             <div class="py-2">
+                 <span class="price-font">Choose your location</span>
+
+                 <div class="mt-3"> 
+                    <select class="form-select form-select-lg mb-3 py-2 w-100 text-center"  aria-label=".form-select-lg example">
+                        <option selected>City</option>
+                        <option value="1">Cairo</option>
+                        <option value="2">Alexandria</option>
+                        <option value="3">Giza</option>
+                        <option value="4">Shubra el-Khema</option>
+                        <option value="5">Port Said</option>
+                        <option value="6">Suez</option>
+                        <option value="7">Tanta</option>
+                        <option value="8">Fayoum</option>
+                        <option value="9">Zagazig</option>
+                        <option value="10">Damanhur</option>
+                        <option value="11">El-Minya</option>
+                        <option value="11">Damietta</option>
+                      </select>
+                      
+                      <select class="form-select form-select-lg mb-3 py-2 w-100 text-center"  aria-label=".form-select-lg example">
+                        <option selected>Area</option>
+                        <option value="1">October</option>
+                        <option value="2">ELtahreer</option>
+                        <option value="3">HdayekEloba</option>
+                        <option value="4">Shubra el-Khema</option>
+                        <option value="5">Wadi Hoof</option>
+                        <option value="6">Madient Nasr</option>
+                        <option value="7">Fifth Settlement</option>
+                        <option value="8">First Settlement</option>
+                       
+                      </select>
+                 </div>
+                <div class="row my-2">
+                    <div class="col-md-1 mt-1">
+                        <i class="fas fa-truck fa-lg"></i>
+                    </div>
+                    <div class="col-md-9">
+                       <strong class="text-muted">Door Delivery</strong>
+                        <div class="py-1">
+                            Shipping EGP 22
+                        </div>
+                            <span>Ready for delivery between 07 July & 08 July when you order within next 6hrs 18mins</span>
+                    </div>
+                </div>
+                
+                <div class="row my-2">
+                    <div class="col-md-1 mt-1">
+                        <i class="fas fa-hands-helping fa-lg"></i>
+                    </div>
+                    <div class="col-md-9">
+                       <strong class="text-muted">Pickup Station</strong>
+                        <div class="py-1">
+                            Shipping EGP 11
+                        </div>
+                            <span>Ready for pickup between 07 July & 08 July when you order within next 6hrs 18mins</span>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-md-1 mt-1">
+                        <i class="fas fa-undo-alt fa-lg"></i>
+                    </div>
+                    <div class="col-md-9">
+                       <strong class="text-muted">Return Policy</strong>
+                        <div class="py-1">
+                            Shipping EGP 11
+                        </div>
+                            <span>14 days free return (except for underwear and personal items) up to 30 days for defective products with necessity for requesting a return within 24 hours from the delivery date.See more</span>
+                    </div>
+                </div>
+                 
+                 
+                
+                  </div>
+                   </mat-sidenav-content>
+          </mat-sidenav-container>
+    </div>
+
+
+
+  
+    
+</section>
+ <!--------------- Familar Products--------------->
+
+<mat-card class="container col-md-11 py-2">
+
+    
+        <h4 class="font-weight-bolder fa-3x">FamilarProducts</h4>
+   
+  <owl-carousel-o [options]="customOptions">
+
+
+    <ng-container *ngFor="let product of  FamilarProducts">
+        
+            
+                <ng-template carouselSlide class="">
+                    <a routerLink="/details/{{product?.id}}">
+                        <img src="{{product?.image}}" class="w-100 border shadow-lg rounded mat-card-img"  alt="{{product?.title}}" (click)="reloadComponent()">
+                       
+                    </a>
+                     <div class="my-2 d-flex justify-content-center">
+                         <h4>{{product?.title}}</h4>
+                     </div>
+                    
+                  </ng-template>
+       
+            
+        
+     
+    </ng-container>
+
+  </owl-carousel-o>
+  
+</mat-card>

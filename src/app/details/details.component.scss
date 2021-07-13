@@ -1,0 +1,68 @@
+.layer
+{
+    position: fixed;
+        width: 100%;
+        background-color: gray;
+}
+.details
+{
+    .cart-icon
+    {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        cursor: pointer;
+        color: tomato;
+        z-index: 12;
+        
+        
+    }
+    .img
+    {
+        height:500px;
+        padding: 10px 0;
+        
+    }
+    .line
+    {
+     
+      width: 100%;
+      border-bottom: 1px gray solid;
+      padding: 5px 0 ;
+    
+    }
+    .price-font
+    {
+        font-size: 20px;
+        font-weight: 600;
+
+    }
+    .icon-button
+    {
+        position: relative;
+        bottom:40px;
+        left: 3px;
+        cursor: pointer;
+    }
+    
+    
+    .mat-card-actions
+    {
+        position: absolute;
+        bottom: -40px;
+        width: 98%;
+        
+        
+    }
+    
+
+}
+.mat-card
+{
+    h4{font-size: 20px;}
+    .mat-card-img
+    {
+            height: 400px;
+    }
+}
+

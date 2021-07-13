@@ -1,0 +1,32 @@
+
+<section class="login-form">
+    <div class="container border shadow-lg pb-4 rounded">
+        <h2 class="my-3 header-form  text-info font-weight-bolder">LogIn</h2>
+        <form [formGroup]='loginForm' (ngSubmit)='logIn()'>
+            <p class="alert alert-danger" *ngIf='error.length>0'>{{error}}</p>
+            <div class="from-group">
+                <label for=""> Email</label>
+                <input type="email" class="form-control my-2" placeholder="Enter your email"  formControlName='email'>
+                <p class="alert alert-danger" *ngIf="requiredValidation('email')"> Required</p>
+            </div>
+            <div class="from-group">
+                <label for=""> password</label>
+                <input type="password" class="form-control my-2" placeholder="Enter your Password" formControlName='password'>
+                <p class="alert alert-danger" *ngIf="requiredValidation('password')"> Required</p>
+            </div>
+            <div class="my-3 pb-4">
+                <button class="btn btn-danger px-3 " type="submit">LogIn</button>
+            </div>
+            <p>If Your Are New Please Sign up <span class="mx-2">
+                <button class="btn btn-info  text-white" (click)="signUp()">Sign Up</button>
+            </span></p>
+            
+           
+    
+        </form>
+        
+    </div>
+</section>
+   
+
+

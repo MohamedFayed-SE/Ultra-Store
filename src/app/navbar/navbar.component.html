@@ -1,0 +1,60 @@
+<section id="navBar" class="my-3"  > 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ultra Store</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" routerLink="home">Home</a>
+                          </li>
+                          <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" routerLink="about">About</a>
+                          </li>
+                          <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" routerLink="contact">Contact us</a>
+                          </li>
+                    </ul>
+                  <ul class="navbar-nav ml-auto">
+                    <div class="form-inline my-2 my-lg-0 mr-3">
+                        <input class="form-control mr-sm-2"  placeholder="Search"  [(ngModel)]='searchValue' (keyup)='setSearchValue(searchValue)'>
+                        
+                    </div>
+                     
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="cart"><i class="fas fa-shopping-cart fa-lg">
+                            Cart
+                          <div class="cart-items">
+                            <span class="cart-size">{{cartNumber}}</span> 
+                          </div>
+                        </i>
+                         
+                        </a>
+                      
+                      </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink='login' *ngIf='!isLogin()'>Login</a>
+                      </li>
+                      <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink='signup' *ngIf='!isLogin()'>Sign up</a>
+                      </li>
+                      <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink='login' (click)='logOut()' *ngIf='isLogin()'>logOut</a>
+                      </li>
+                    
+                   
+                     
+                  
+                 
+                  </ul>
+                  
+                </div>
+            </div>
+          
+          </nav>
+    </header>
+</section>

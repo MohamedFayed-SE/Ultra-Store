@@ -1,0 +1,67 @@
+.mat-sidenav-content{
+  a{
+
+       color:chocolate;
+      i{
+        padding: 10px 20px ;
+
+      }
+  }
+}
+.icon-size
+{
+  font-size: 25px;
+  font-weight: 500;
+}
+.pionter{cursor: pointer;}
+.mat-card
+{
+  width: 350px;
+  height: 390px;
+  transition: 1s all;
+    &:hover
+    {
+        transform: scale(1.1);
+        z-index: 5555555555;
+    }
+    
+    
+    .mat-card-img
+    {
+        height: 200px;
+    }
+    .mat-button
+    {
+       
+        background-color:darkgoldenrod;
+       
+
+    }
+    
+    .heart {
+        fill: red;
+       
+        bottom: 30px;
+        right: 20px;
+        width: 30px;
+       
+        transition: 1s all;
+        z-index: 1111;
+        opacity: 1;
+        cursor: pointer;
+        &:hover
+        {
+            fill: red;
+        }
+
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+      }
+      
+      
+    
+
+}
